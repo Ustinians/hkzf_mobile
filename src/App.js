@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+// 引入常用的路由
+import {Route,Link} from "react-router-dom"
+// 导入需要的路由组件(页面)
+import Home from "./pages/Home";
+import CityList from "./pages/CityList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        {/* 配置导航菜单 */}
+        <Link to="/home">首页</Link>
+        <Link to="/citylist">城市列表</Link>
+        {/* 配置路由 */}
+        <Route path="/home" component={Home}></Route>
+        <Route path="/citylist" component={CityList}></Route>
+      </div>
+    )
+  }
 }
-
-export default App;

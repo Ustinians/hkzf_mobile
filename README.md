@@ -1,70 +1,59 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# React好客租房mobile项目
+## 项目准备
+### 项目介绍
+技术栈
+* React核心库: `react`,`react-dom`,`react-router-dom`
+* 脚手架: `create-reqct-app`
+* 数据请求: `axios`
+* UI组件库: `antd-mobile`
+* 其他组件库: `react-virtualized`,`formik + yup`,`react-spring` 等
+* 百度地图API
+### 项目搭建
+1. 本地接口部署(数据库,接口)
+    - 创建并导入数据
+        + 启动phpStudy
+        + 打开Navicat for MySQL
+        + 创建数据库
+          ![hkzf_SQL](https://pic.imgdb.cn/item/61a0d3d22ab3f51d91b225fe.jpg)
+        + 运行SQL文件
+          ![runSQL](https://pic.imgdb.cn/item/61a0d4442ab3f51d91b25354.jpg)
+          刷新后即可看见数据库
+          ![data](https://pic.imgdb.cn/item/61a0d4ae2ab3f51d91b27e7c.jpg)
+    - 启动接口: 在API目录中执行`npm start`运行数据库
+      ![files](https://pic.imgdb.cn/item/61a0d5212ab3f51d91b2b037.jpg)
+      ![db_success](https://pic.imgdb.cn/item/61a0d60c2ab3f51d91b311d6.jpg)
+    - 测试接口: 接口地址http://localhost:8080
+2. 使用脚手架初始化项目
+```
+create-react-app 项目名称
+```
+## React Router
+* 引入路由组件
+```js
+import Home from "./pages/Home";
+import CityList from "./pages/CityList";
+```
+* 配置路由页面(v5)
+```js
+<Route path="/home" component={Home}></Route>
+<Route path="/citylist" component={CityList}></Route>
+```
+* 配置路由导航菜单(v5)
+```js
+<Link to="/home">首页</Link>
+<Link to="/citylist">城市列表</Link>
+```
+## 项目基础样式(初始化)配置
+```css
+/* 全局样式配置 */
+html,
+body {
+  height: 100%;
+  font-family: "Microsoft YaHei";
+  color: #333;
+  background-color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+```
