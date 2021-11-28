@@ -1,3 +1,7 @@
+/* 设置主题颜色 */
+:root{
+  --adm-color-primary: rgb(33, 185, 122) !important;
+}
 /* 设置全局样式 */
 html,
 body {
@@ -5,6 +9,7 @@ body {
   font-family: "Microsoft YaHei";
   color: #333;
   background-color: #fff;
+  margin: 0;
 }
 * {
   box-sizing: border-box;

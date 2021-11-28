@@ -1,0 +1,12 @@
+.index .menu_item {
+  text-align: center;
+}
+.index .menu_item .menu_item_img {
+  width: 48px;
+  padding-top: 8px;
+}
+.index .menu_item .menu_item_title {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 3px;
+}

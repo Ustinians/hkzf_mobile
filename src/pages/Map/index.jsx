@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class News extends Component {
+export default class Map extends Component {
     render() {
         return (
             <div>
-                资讯
+                地图找房
             </div>
         )
     }

@@ -1,0 +1,13 @@
+.home {
+  height: 100%;
+}
+.home .home_footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: -2px;
+  border-top: 1px solid #ececec;
+}
+.home .home_footer i {
+  font-size: 20px;
+}
