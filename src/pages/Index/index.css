@@ -10,3 +10,40 @@
   text-align: center;
   margin-top: 3px;
 }
+.index .group {
+  background-color: #f4f4f4;
+  padding: 7px;
+}
+.index .group .title {
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.index .group .title .more {
+  float: right;
+  font-size: 13px;
+  color: #787d82;
+}
+.index .group .group_item {
+  background-color: #fff;
+  display: flex;
+  padding: 5px;
+}
+.index .group .group_item .desc {
+  flex: 2;
+  padding: 10px;
+}
+.index .group .group_item .desc .group_title {
+  font-size: 13px;
+  font-weight: 600;
+}
+.index .group .group_item .desc .group_desc {
+  font-size: 12px;
+  color: #666;
+  padding-top: 5px;
+}
+.index .group .group_item .group_img {
+  flex: 1;
+  width: 50px;
+  padding: 5px;
+}

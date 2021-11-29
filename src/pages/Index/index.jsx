@@ -39,7 +39,9 @@ export default class Index extends Component {
                 img: nav_4,
                 path: "/profile"
             }
-        ]
+        ],
+        // 租房小组数据
+        groups:[]
     }
     // 获取轮播图
     async getSwipers(){
@@ -48,6 +50,17 @@ export default class Index extends Component {
         const result = res.data.body;
         this.setState({
             swipers: result
+        })
+    }
+    // 获取租房小组
+    async getGroups(){
+        const res = await axios.get("http://localhost:8080/home/groups",{
+            params: {
+                area: "AREA|88cff55c-aaa4-e2e0"
+            }
+        });
+        this.setState({
+            groups: res.data.body
         })
     }
     // 渲染轮播图
@@ -90,8 +103,26 @@ export default class Index extends Component {
             </Grid.Item>
         ))
     }
+    // 渲染租房小组
+    renderGroup = () => {
+        const {groups} = this.state;
+        return groups.map(item => (
+            <Grid.Item key={item.id}>
+                <div className="group_item">
+                    <div className="desc">
+                        <h2 className="group_title">{item.title}</h2>
+                        <p className="group_desc">{item.desc}</p>
+                    </div>
+                    <img className="group_img" src={`http://localhost:8080${item.imgSrc}`} alt="img"></img>
+                </div>
+            </Grid.Item>
+        ))
+    }
     UNSAFE_componentWillMount(){
+        // 获取轮播图数据
         this.getSwipers();
+        // 获取租房小组数据
+        this.getGroups();
     }
     render() {
         return (
@@ -106,6 +137,17 @@ export default class Index extends Component {
                 <Grid columns={this.state.menu.length} gap={8}>
                     {this.renderMenu()}
                 </Grid>
+                {/* 租房小组 */}
+                <div className="group">
+                    <h3 className="title">
+                        租房小组
+                        <span className="more">更多</span>
+                    </h3>
+                    <Grid columns={2} gap={8}>
+                        {this.renderGroup()}
+                    </Grid>
+                </div>
+                {/* 最新资讯 */}
             </div>
         )
     }
