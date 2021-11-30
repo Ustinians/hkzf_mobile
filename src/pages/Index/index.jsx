@@ -41,7 +41,9 @@ export default class Index extends Component {
             }
         ],
         // 租房小组数据
-        groups:[]
+        groups:[],
+        // 最新资讯数据
+        news:[]
     }
     // 获取轮播图
     async getSwipers(){
@@ -61,6 +63,13 @@ export default class Index extends Component {
         });
         this.setState({
             groups: res.data.body
+        })
+    }
+    // 获取最新资讯
+    async getNews(){
+        const res = await axios.get("http://localhost:8080/home/news");
+        this.setState({
+            news: res.data.body
         })
     }
     // 渲染轮播图
@@ -118,11 +127,33 @@ export default class Index extends Component {
             </Grid.Item>
         ))
     }
+    // 渲染最新资讯
+    renderNews = () => {
+        const {news} = this.state;
+        return news.map(item => (
+            <Grid.Item>
+                <div className="news_item">
+                    <div className="imgwrap">
+                        <img className="news_img" src={`http://localhost:8080${item.imgSrc}`} alt="img"></img>
+                    </div>
+                    <div className="desc">
+                        <h3 className="news_title">{item.title}</h3>
+                        <div className="news_desc">
+                            <span className="news_from">{item.from}</span>
+                            <span className="news_date">{item.date}</span>
+                        </div>
+                    </div>
+                </div>
+            </Grid.Item>
+        ))
+    }
     UNSAFE_componentWillMount(){
         // 获取轮播图数据
         this.getSwipers();
         // 获取租房小组数据
         this.getGroups();
+        // 获取最新资讯数据
+        this.getNews();
     }
     render() {
         return (
@@ -133,6 +164,8 @@ export default class Index extends Component {
                         this.renderSwipers()
                     }
                 </Swiper>
+                {/* 顶部搜索框 */}
+                
                 {/* 菜单选择项 */}
                 <Grid columns={this.state.menu.length} gap={8}>
                     {this.renderMenu()}
@@ -148,6 +181,14 @@ export default class Index extends Component {
                     </Grid>
                 </div>
                 {/* 最新资讯 */}
+                <div className="news">
+                    <h3 className="title">最新资讯</h3>
+                    <Grid columns={1}>
+                        {
+                            this.renderNews()
+                        }
+                    </Grid>
+                </div>
             </div>
         )
     }

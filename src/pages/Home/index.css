@@ -1,7 +1,9 @@
 .home {
   height: 100%;
+  padding-bottom: 50px;
 }
 .home .home_footer {
+  background-color: #fff;
   width: 100%;
   position: fixed;
   bottom: 0;

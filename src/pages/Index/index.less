@@ -1,51 +1,94 @@
-.index{
-    .menu_item{
-        text-align: center;
-        .menu_item_img{
-            width: 48px;
-            padding-top: 8px;
-        }
-        .menu_item_title{
-            font-size: 13px;
-            text-align: center;
-            margin-top: 3px;
-        }
+.index {
+  // 菜单列表
+  .menu_item {
+    text-align: center;
+    .menu_item_img {
+      width: 48px;
+      padding-top: 8px;
     }
-    .group{
-        background-color: #f4f4f4;
-        padding: 7px;
-        .title{
-            margin: 5px;
-            font-size: 15px;
-            font-weight: 600;
-            .more{
-                float: right;
-                font-size: 13px;
-                color: #787d82;
-            }
-        }
-        .group_item{
-            background-color: #fff;
-            display: flex;
-            padding: 5px;
-            .desc{
-                flex: 2;
-                padding: 10px;
-                .group_title{
-                    font-size: 13px;
-                    font-weight: 600;
-                }
-                .group_desc{
-                    font-size: 12px;
-                    color: #666;
-                    padding-top: 5px;
-                }
-            }
-            .group_img{
-                flex: 1;
-                width: 50px;
-                padding: 5px;
-            }
-        }
+    .menu_item_title {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 3px;
     }
+  }
+  // 租房小组
+  .group {
+    background-color: #f4f4f4;
+    padding: 7px;
+    .title {
+      margin: 5px;
+      font-size: 15px;
+      font-weight: 600;
+      .more {
+        float: right;
+        font-size: 13px;
+        color: #787d82;
+      }
+    }
+    .group_item {
+      background-color: #fff;
+      display: flex;
+      padding: 5px;
+      .desc {
+        flex: 2;
+        padding: 10px;
+        .group_title {
+          font-size: 13px;
+          font-weight: 600;
+        }
+        .group_desc {
+          font-size: 12px;
+          color: #666;
+          padding-top: 5px;
+        }
+      }
+      .group_img {
+        flex: 1;
+        width: 50px;
+        padding: 5px;
+      }
+    }
+  }
+  // 最新资讯
+  .news {
+    padding: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    .title {
+      margin: 10px 0 5px 10px;
+      font-size: 15px;
+    }
+    .news_item{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .imgwrap {
+      float: left;
+      height: 90px;
+      width: 120px;
+      margin:10px 0;
+      .news_img {
+        height: 90px;
+        width: 120px;
+      }
+    }
+    .desc {
+      padding-top: 8px;
+      overflow: hidden;
+      height: 100%;
+      padding-left: 12px;
+      .news_title {
+        margin-bottom: 40px;
+        font-size: 14px;
+      }
+      .news_desc {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: #9c9fa1;
+        font-size: 12px;
+      }
+    }
+  }
 }
