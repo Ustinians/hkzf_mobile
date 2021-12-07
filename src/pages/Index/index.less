@@ -1,4 +1,59 @@
 .index {
+  // 轮播图内搜索框
+  .swiper{
+    position: relative;
+    .search_box{
+      position: absolute;
+      top: 25px;
+      width: 100%;
+      padding: 0 10px;
+      display: flex;
+      // 搜索区域
+      .search{
+        flex: 1;
+        height: 34px;
+        margin: 0 10px;
+        padding: 8px 5px 5px 8px;
+        border-radius: 3px;
+        background-color: #fff;
+        display: flex;
+        // 当前位置
+        .location{
+          .icon-arrow{
+            margin-left: 2px;
+            font-size: 12px;
+            color: #7f7f80;
+          }
+        }
+        // 搜索表单
+        .form{
+          border-left: 1px solid #e5e5e5;
+          margin-left: 12px;
+          line-height: 16px;
+          .icon-seach{
+            vertical-align: middle;
+            padding: 0 2px 0 12px;
+            color: #9c9fa1;
+            font-size: 15px;
+          }
+          .text{
+            padding-left: 4px;
+            font-size: 13px;
+            color: #9c9fa1;
+          }
+        }
+      }
+      // 地图选择
+      .map_icon{
+        padding-top: 5px;
+        padding-right: 5px;
+        i{
+          font-size: 25px;
+          color: #fff;
+        }
+      }
+    }
+  }
   // 菜单列表
   .menu_item {
     text-align: center;

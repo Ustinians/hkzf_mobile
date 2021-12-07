@@ -8,7 +8,7 @@ import Index from "../Index";
 import List from "../List";
 import News from "../News";
 import Profile from "../Profile";
-import Map from "../Map";
+
 
 export default class Home extends Component {
     state = {
@@ -60,10 +60,10 @@ export default class Home extends Component {
               <Route path="/list" component={List}></Route>
               <Route path="/news" component={News}></Route>
               <Route path="/profile" component={Profile}></Route>
-              <Route path="/map" component={Map}></Route>
+
               {/* 底部导航栏 */}
               {
-                this.props.location.pathname === "/map" ? "" : (
+                (this.props.location.pathname === "/map" || this.props.location.pathname === "/search" || this.props.location.pathname === "/citylist") ? "" : (
                   <div className="home_footer">
                       <TabBar
                         defaultActiveKey={selectedTab}

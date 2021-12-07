@@ -1,3 +1,51 @@
+.index .swiper {
+  position: relative;
+}
+.index .swiper .search_box {
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+}
+.index .swiper .search_box .search {
+  flex: 1;
+  height: 34px;
+  margin: 0 10px;
+  padding: 8px 5px 5px 8px;
+  border-radius: 3px;
+  background-color: #fff;
+  display: flex;
+}
+.index .swiper .search_box .search .location .icon-arrow {
+  margin-left: 2px;
+  font-size: 12px;
+  color: #7f7f80;
+}
+.index .swiper .search_box .search .form {
+  border-left: 1px solid #e5e5e5;
+  margin-left: 12px;
+  line-height: 16px;
+}
+.index .swiper .search_box .search .form .icon-seach {
+  vertical-align: middle;
+  padding: 0 2px 0 12px;
+  color: #9c9fa1;
+  font-size: 15px;
+}
+.index .swiper .search_box .search .form .text {
+  padding-left: 4px;
+  font-size: 13px;
+  color: #9c9fa1;
+}
+.index .swiper .search_box .map_icon {
+  padding-top: 5px;
+  padding-right: 5px;
+}
+.index .swiper .search_box .map_icon i {
+  font-size: 25px;
+  color: #fff;
+}
 .index .menu_item {
   text-align: center;
 }
