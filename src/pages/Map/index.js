@@ -22,7 +22,7 @@ export default class Map extends Component {
                 {/* 顶部导航区域 */}
                 <div className="map_top">
                     <NavBar back='返回' onBack={this.back}>
-                        标题
+                        地图找房
                     </NavBar>
                 </div>
 

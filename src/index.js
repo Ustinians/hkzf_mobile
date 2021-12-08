@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // 导入字体图标库
 import "./assets/fonts/iconfont.css";
+// 导入react-virtualized的css样式
+import "react-virtualized/styles.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // 引入路由

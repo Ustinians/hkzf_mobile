@@ -5,6 +5,7 @@ import "../../assets/fonts/iconfont.css"
 // 引入Antd组件
 import {Swiper, Grid } from "antd-mobile";
 import axios from "axios";
+import {getCurrentCity} from "../../utils/index"
 // 导入如片
 import nav_1 from "../../assets/image/nav-1.png";
 import nav_2 from "../../assets/image/nav-2.png";
@@ -179,16 +180,10 @@ export default class Index extends Component {
                 }
             });
         });
-        // 通过IP定位获取当前城市信息
-        var myCity = new window.BMapGL.LocalCity();
-        myCity.get(async res => {
-            // console.log(res);
-            const result = await axios.get(`http://localhost:8080/area/info?name=${res.name}`);
-            // console.log(result.data.body.label);
-            this.setState({
-                curCityName:result.data.body.label
-            })
-        }); 
+        const curCity = await getCurrentCity();
+        this.setState({
+            curCityName:curCity.label
+        })
     }
     render() {
         const {curCityName} = this.state;
@@ -259,3 +254,10 @@ export default class Index extends Component {
         )
     }
 }
+
+/**
+ * react-virtualized
+ * 高效渲染大型列表和表格
+ * react-window 
+ * 轻量级的react-virtualized组件
+ */
